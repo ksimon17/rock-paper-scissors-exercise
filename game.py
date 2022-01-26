@@ -1,11 +1,38 @@
 # this is the "game.py" file...
+
+
+
+# Objectives
+
+# ASK FOR USER INPUT
+
+
+# VALIDATIONS
+
+
+# COMPUTER CHOICE
+
+
+# DETERMINE THE WINNER
+
+
+# DISPLAY FINAL RESULTS 
+
+
+
+
+
+
+
+
+
 print("Welcome to the Rock, Paper, Scissors Shoot Game!")
 
 # Creating a List of Valid Choices to Use in Future Computer Simulations
 listOfChoices = ["rock", "paper","scissors"]
 
 # 1. User Input Section 
-userSelection = input("To play the game, Please input either rock, paper, or scissors")
+userSelection = input("To play the game, Please choose one of 'rock', 'paper', or 'scissors': ")
 
 #2. Validating User Input / #3 Simulating Computer Selection / #4. Determining a Winner
 if (userSelection != "rock" and userSelection != "paper" and userSelection != "scissors") {
