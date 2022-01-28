@@ -79,7 +79,8 @@ else:
     print("You tied. Nice job!")
 print ("-------------------------")
 print ("Thanks for playing. Please play again!")
-
+print ("-------------------------")
+print("")
 
 #initial code 
 #print("Rock, Paper, Scissors, Shoot!")
