@@ -1,10 +1,39 @@
-# rock-paper-scissors-exercise
-Instructions for how to set up and run the application
+# rps-starter
 
-Environment Setup: 
-(1) To create and activate a new project specific Anaconda virtual environment, enter the following code in the command line: 
-conda create -n my-game-env python=3.8 # (first time only)
-conda activate my-game-env
+A Starter Repository for the [Rock Paper Scissors Exercise](https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/rock-paper-scissors/README.md).
 
-(2) From within this newly created virtual environment, run the app with the following code 
+## Setup
+
+Create a virtual environment:
+
+```sh
+conda create -n rps-env python=3.8
+```
+
+Activate the virtual environment:
+
+```sh
+conda activate rps-env
+```
+
+Install package dependencies (mainly for testing):
+
+```sh
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the rock paper scissors game:
+
+```sh
 python game.py
+```
+
+## Testing
+
+Run tests:
+
+```sh
+pytest
+```
