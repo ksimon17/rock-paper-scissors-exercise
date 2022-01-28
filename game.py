@@ -82,6 +82,5 @@ print ("Thanks for playing. Please play again!")
 print ("-------------------------")
 print("")
 
-#initial code 
-#print("Rock, Paper, Scissors, Shoot!")
+
 
