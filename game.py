@@ -41,6 +41,7 @@ if (userSelection != "rock" and userSelection != "paper" and userSelection != "s
          + "input is either 'rock', 'paper', or 'scissors'. However, you inputted" + userSelection 
          + ", which is not valid. To replay the game, please reinsert python game.py in"
          + " your command line and input an appropriate selection when prompted. Thank you!")
+    exit()
 else :
     # Simulating Computer Selection
     computerSelection = random.choice(listOfChoices)
