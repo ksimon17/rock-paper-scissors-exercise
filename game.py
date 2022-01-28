@@ -38,7 +38,7 @@ userSelection = input("To play the game, Please choose one of 'rock', 'paper', o
 if (userSelection != "rock" and userSelection != "paper" and userSelection != "scissors"):
     
     print("Unfortunately, this user input is invalid. For reference, the valid"
-         + "input is either 'rock', 'paper', or 'scissors'. However, you inputted" + selection 
+         + "input is either 'rock', 'paper', or 'scissors'. However, you inputted" + userSelection 
          + ", which is not valid. To replay the game, please reinsert python game.py in"
          + " your command line and input an appropriate selection when prompted. Thank you!")
 else :
