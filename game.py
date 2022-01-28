@@ -24,9 +24,16 @@
 
 
 import random
+import os
+
+player_name = os.getenv("PLAYER_NAME", default="Player One")
+
+#print("player_name: " + player_name )
+
 print("")
 print ("-------------------------")
-print("Welcome to the Rock, Paper, Scissors Shoot Game!")
+print("Welcome '" + player_name + "' to the Rock, Paper, Scissors Shoot Game!")
+print ("-------------------------")
 
 # Creating a List of Valid Choices to Use in Future Computer Simulations
 listOfChoices = ["rock", "paper","scissors"]

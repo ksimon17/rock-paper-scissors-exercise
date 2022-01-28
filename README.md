@@ -33,7 +33,7 @@ python game.py
 To customize the user's name during run time: 
 
 ```sh
-PLAYER_NAME="Jon Snow" python game.py
+PLAYER_NAME="User's Name" python game.py
 ```
 
 Otherwise, the user's name will default to "Player One"
