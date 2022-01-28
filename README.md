@@ -40,7 +40,7 @@ Otherwise, the user's name will default to "Player One"
 
 ## Testing
 
-Run tests:
+To run automated tests:
 
 ```sh
 pytest
