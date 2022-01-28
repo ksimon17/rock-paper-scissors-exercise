@@ -73,8 +73,10 @@ print ("The computer chose: " + computerSelection)
 print ("-------------------------")
 if (userResult == "win"):
     print("Congratulations! You won the game!")
-else:
+elif (userResult == "loss"):
     print("Oh, the computer won. It's ok. Better luck next time.")
+else: 
+    print("You tied. Nice job!")
 print ("-------------------------")
 print ("Thanks for playing. Please play again!")
 
