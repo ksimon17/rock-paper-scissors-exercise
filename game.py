@@ -24,7 +24,7 @@
 
 
 import random
-
+print("")
 print ("-------------------------")
 print("Welcome to the Rock, Paper, Scissors Shoot Game!")
 
