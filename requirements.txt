@@ -3,4 +3,4 @@
 pytest
 
 
-# feel free to update this file if you find need for additional packages in your solutio
+# feel free to update this file if you find need for additional packages in your solution

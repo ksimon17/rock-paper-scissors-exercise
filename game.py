@@ -9,14 +9,16 @@
 # DISPLAY FINAL RESULTS 
 # NAME CUSTOMIZATION
 # AUTOMATED TESTING
+# --------------------
 
+# should all variable names be underscored?
 
 # import appropriate libraries
 import random
 import os
 
 
-#DETERMINE WINNER CODE - AUTOMATED TESTING 
+# DETERMINE WINNER CODE - AUTOMATED TESTING 
 def determine_winner(choice_1, choice_2):
     """
     Determines the winning choice between two valid choices from selectable options: "rock", "paper", or "scissors".
@@ -25,7 +27,7 @@ def determine_winner(choice_1, choice_2):
 
     Example: determine_winner("rock", "paper")
     """
-    # todo: write some Python here to determine the winner
+    # code to determine the winner
     winner = ""
     if (choice_1 == choice_2): #Tie
         winner = None
@@ -49,26 +51,24 @@ def determine_winner(choice_1, choice_2):
 
 if __name__ == "__main__":
 
-    print("WELCOME TO MY ROCK PAPER SCISSORS GAME!")
-
+    # Set the username to the default "Player One" or to the user's provided one
     player_name = os.getenv("PLAYER_NAME", default="Player One")
 
-    #print("player_name: " + player_name )
-
+    # Welcome the user to the game 
     print("")
     print ("-------------------------")
-    print("Welcome '" + player_name + "' to the Rock, Paper, Scissors Shoot Game!")
+    print("Welcome '" + player_name + "' to the Rock, Paper, Scissors Game!")
     print ("-------------------------")
 
-    # Creating a List of Valid Choices to Use in Future Computer Simulations
+    # Create a List of Valid Choices to Use in Future Computer Simulations
     listOfChoices = ["rock", "paper","scissors"]
 
-    # 1. User Input Section 
+    # User Input 
     userSelection = input("To play the game, Please choose one of 'rock', 'paper', or 'scissors': ")
 
-    #2. Validating User Input / #3 Simulating Computer Selection / #4. Determining a Winner
+    # Validating User Input / Simulating Computer Selection / Determining a Winner
     if (userSelection != "rock" and userSelection != "paper" and userSelection != "scissors"):
-        #INVALID INPUT - INFORM THE USER AND GRACEFULLY EXIT THE PROGRAM
+        #Invalid Input -- Inform the User and Gracefully Exit the Program
         print("")
         print ("-------------------------")
         print("Unfortunately, this user input is invalid.")
@@ -79,12 +79,12 @@ if __name__ == "__main__":
         print("Thank you!")
         print ("-------------------------")
         print("")
-        exit()
+        exit() # gracefully exit the program
     else :
         # Simulating Computer Selection
         computerSelection = random.choice(listOfChoices)
         
-        # DETERMINING THE WINNER
+        # Determining the Winner
         userResult = ""
         if (userSelection == computerSelection): # TIE
             userResult = "tie"
@@ -105,7 +105,7 @@ if __name__ == "__main__":
                 else: #userSelection == "scissors" -- scissors (user) vs paper (comp)
                     userResult = "win"
 
-    #DISPLAY FINAL RESULTS 
+    #Display Final Results 
     print ("-------------------------")
     print ("You chose: " + userSelection)
     print ("The computer chose: " + computerSelection)
