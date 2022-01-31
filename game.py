@@ -26,7 +26,7 @@ def determine_winner(choice_1, choice_2):
     Example: determine_winner("rock", "paper")
     """
     # code to determine the winner
-    winner = ""
+    winner = "" # variable winner will be returned by the determine_winner function
 
     #if (choice_1 == choice_2): #Tie
 
