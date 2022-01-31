@@ -11,11 +11,9 @@
 # AUTOMATED TESTING
 # --------------------
 
-# should all variable names be underscored?
-
 # import appropriate libraries
-import random
-import os
+import random # for simulating a random computer selection
+import os # for customizing the user's name
 
 
 # DETERMINE WINNER CODE - AUTOMATED TESTING 
@@ -29,23 +27,33 @@ def determine_winner(choice_1, choice_2):
     """
     # code to determine the winner
     winner = ""
-    if (choice_1 == choice_2): #Tie
+
+    #if (choice_1 == choice_2): #Tie
+
+    if (((choice_1 == "Paper" or choice_1 == "PAPER" or choice_1 == "paper") and 
+          (choice_2 == "Paper" or choice_2 == "PAPER" or choice_2 == "paper")) 
+        or 
+         ((choice_1 == "Rock" or choice_1 == "ROCK" or choice_1 == "rock") and
+         (choice_2 == "Rock" or choice_2 == "ROCK" or choice_2 == "rock"))
+         or
+         ((choice_1 == "Scissors" or choice_1 == "SCISSORS" or choice_1 == "scissors") and
+         (choice_2 == "Scissors" or choice_2 == "SCISSORS" or choice_2 == "scissors")) ): # all tie combination with different valid inputs
         winner = None
-    elif (choice_1 == "rock"):
-        if (choice_2 == "paper"): # Rock vs. Paper
-            winner = "paper"
+    elif (choice_1 == "rock" or choice_1 == "ROCK" or choice_1 == "Rock"):
+        if (choice_2 == "paper" or choice_2 == "PAPER" or choice_2 == "Paper"): # Rock vs. Paper
+            winner = choice_2 # "paper"
         else: # Rock vs. Scissors
-            winner = "rock" 
-    elif (choice_1 == "paper"):
-        if (choice_2 == "rock"): # Paper vs. Rock 
-            winner = "paper"
+            winner = choice_1 # "rock" 
+    elif (choice_1 == "paper" or choice_1 == "PAPER" or choice_1 == "Paper"):
+        if (choice_2 == "rock" or choice_2 == "ROCK" or choice_2 == "Rock"): # Paper vs. Rock 
+            winner = choice_1 # "paper"
         else: # Paper vs. Scissors
-            winner = "scissors"
-    else: # Scissors vs. Rock
-        if (choice_2 == "rock"):
-            winner = "rock"
+            winner = choice_2 # "scissors"
+    else: # (choice_1 == "Scissors" or choice_1 == "SCISSORS" or choice_1 == "Scissors")
+        if (choice_2 == "rock" or choice_2 == "ROCK" or choice_2 == "Rock"): # Scissors vs. Rock
+            winner = choice_2 # "rock"
         else: # Scissors vs. Paper
-            winner = "scissors"
+            winner = choice_1 # "scissors"
     return winner
 
 # MAIN 
@@ -66,7 +74,9 @@ if __name__ == "__main__":
     # User Input 
     user_selection = input("To play the game, Please choose one of 'rock', 'paper', or 'scissors': ")
 
-    # Should the valid input just be "rock", "paper", and "scissors" or can they include upper cases? 
+  #  valid_inputs = ['rock','paper','scissors','ROCK','PAPER','SCISSORS','Rock','Paper','Scissors']
+
+    
     # Validating User Input - Check if the User Inputted Valued Input
     if (user_selection != "rock" and user_selection != "paper" and user_selection != "scissors" and
         user_selection != "ROCK" and user_selection != "PAPER" and user_selection != "SCISSORS" and 
@@ -87,29 +97,9 @@ if __name__ == "__main__":
     #User Input is Valid 
 
     # Simulating Computer Selection
-    computer_selection = random.choice(list_of_choices)
+    computer_selection = random.choice(list_of_choices) 
     
     # Determining the Winner
-    user_result = ""
-    # if (user_selection == computer_selection): # TIE
-    #     user_result = "tie"
-    # else:
-    #     if (computer_selection == "rock"): # COMPUTER PICKS PAPER
-    #         if (user_selection == "scissors"): # scissors (user) vs rock (comp)
-    #             user_result = "loss"
-    #         else: #user_selection == "paper" -- paper (user) vs rock (comp)
-    #             user_result = "win"
-    #     elif (computer_selection == "scissors"): # COMPUTER PICKS SCISSORS
-    #         if (user_selection == "rock"): # rock (user) vs. scissors (comp)
-    #             user_result = "win"
-    #         else: #user_selection == "paper" -- paper (user) vs. scissors (comp)
-    #             user_result = "loss"
-    #     else: # computer_selection == "paper" -- COMPUTER PICKS PAPER
-    #         if (user_selection == "rock"): # rock (user) vs. paper (comp)
-    #             user_result = "loss"
-    #         else: #user_selection == "scissors" -- scissors (user) vs paper (comp)
-    #             user_result = "win"
-        
     # CALL THE DETERMINE_WINNER FUNCTION WITHIN MAIN ?
     winner = determine_winner(user_selection, computer_selection)
     print ("-------------------------")
@@ -127,19 +117,4 @@ if __name__ == "__main__":
     print ("-------------------------")
     print("")
 
-    #Display Final Results 
-    # print ("-------------------------")
-    # print ("You chose: " + user_selection)
-    # print ("The computer chose: " + computer_selection)
-    # print ("-------------------------")
-    # if (user_result == "win"):
-    #     print("Congratulations! You won the game!")
-    # elif (user_result == "loss"):
-    #     print("Oh, the computer won. It's ok. Better luck next time.")
-    # else: 
-    #     print("You tied. Nice job!")
-    # print ("-------------------------")
-    # print ("Thanks for playing. Please play again!")
-    # print ("-------------------------")
-    # print("")
 
