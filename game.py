@@ -66,8 +66,11 @@ if __name__ == "__main__":
     # User Input 
     user_selection = input("To play the game, Please choose one of 'rock', 'paper', or 'scissors': ")
 
-    # Validating User Input / Simulating Computer Selection / Determining a Winner
-    if (user_selection != "rock" and user_selection != "paper" and user_selection != "scissors"):
+    # Should the valid input just be "rock", "paper", and "scissors" or can they include upper cases? 
+    # Validating User Input - Check if the User Inputted Valued Input
+    if (user_selection != "rock" and user_selection != "paper" and user_selection != "scissors" and
+        user_selection != "ROCK" and user_selection != "PAPER" and user_selection != "SCISSORS" and 
+        user_selection != "Rock" and user_selection != "Paper" and user_selection != "Scissors" ):
         #Invalid Input -- Inform the User and Gracefully Exit the Program
         print("")
         print ("-------------------------")
@@ -80,44 +83,63 @@ if __name__ == "__main__":
         print ("-------------------------")
         print("")
         exit() # gracefully exit the program
-    else :
-        # Simulating Computer Selection
-        computer_selection = random.choice(list_of_choices)
-        
-        # Determining the Winner
-        user_result = ""
-        if (user_selection == computer_selection): # TIE
-            user_result = "tie"
-        else:
-            if (computer_selection == "rock"): # COMPUTER PICKS PAPER
-                if (user_selection == "scissors"): # scissors (user) vs rock (comp)
-                    user_result = "loss"
-                else: #user_selection == "paper" -- paper (user) vs rock (comp)
-                    user_result = "win"
-            elif (computer_selection == "scissors"): # COMPUTER PICKS SCISSORS
-                if (user_selection == "rock"): # rock (user) vs. scissors (comp)
-                    user_result = "win"
-                else: #user_selection == "paper" -- paper (user) vs. scissors (comp)
-                    user_result = "loss"
-            else: # computer_selection == "paper" -- COMPUTER PICKS PAPER
-                if (user_selection == "rock"): # rock (user) vs. paper (comp)
-                    user_result = "loss"
-                else: #user_selection == "scissors" -- scissors (user) vs paper (comp)
-                    user_result = "win"
+    
+    #User Input is Valid 
 
-    #Display Final Results 
+    # Simulating Computer Selection
+    computer_selection = random.choice(list_of_choices)
+    
+    # Determining the Winner
+    user_result = ""
+    # if (user_selection == computer_selection): # TIE
+    #     user_result = "tie"
+    # else:
+    #     if (computer_selection == "rock"): # COMPUTER PICKS PAPER
+    #         if (user_selection == "scissors"): # scissors (user) vs rock (comp)
+    #             user_result = "loss"
+    #         else: #user_selection == "paper" -- paper (user) vs rock (comp)
+    #             user_result = "win"
+    #     elif (computer_selection == "scissors"): # COMPUTER PICKS SCISSORS
+    #         if (user_selection == "rock"): # rock (user) vs. scissors (comp)
+    #             user_result = "win"
+    #         else: #user_selection == "paper" -- paper (user) vs. scissors (comp)
+    #             user_result = "loss"
+    #     else: # computer_selection == "paper" -- COMPUTER PICKS PAPER
+    #         if (user_selection == "rock"): # rock (user) vs. paper (comp)
+    #             user_result = "loss"
+    #         else: #user_selection == "scissors" -- scissors (user) vs paper (comp)
+    #             user_result = "win"
+        
+    # CALL THE DETERMINE_WINNER FUNCTION WITHIN MAIN ?
+    winner = determine_winner(user_selection, computer_selection)
     print ("-------------------------")
     print ("You chose: " + user_selection)
     print ("The computer chose: " + computer_selection)
     print ("-------------------------")
-    if (user_result == "win"):
-        print("Congratulations! You won the game!")
-    elif (user_result == "loss"):
-        print("Oh, the computer won. It's ok. Better luck next time.")
-    else: 
+    if (winner == None):
         print("You tied. Nice job!")
+    elif (winner == user_selection):
+        print("Congratulations! You won the game!")
+    elif (winner == computer_selection):
+        print("Oh, the computer won. It's ok. Better luck next time.")
     print ("-------------------------")
     print ("Thanks for playing. Please play again!")
     print ("-------------------------")
     print("")
+
+    #Display Final Results 
+    # print ("-------------------------")
+    # print ("You chose: " + user_selection)
+    # print ("The computer chose: " + computer_selection)
+    # print ("-------------------------")
+    # if (user_result == "win"):
+    #     print("Congratulations! You won the game!")
+    # elif (user_result == "loss"):
+    #     print("Oh, the computer won. It's ok. Better luck next time.")
+    # else: 
+    #     print("You tied. Nice job!")
+    # print ("-------------------------")
+    # print ("Thanks for playing. Please play again!")
+    # print ("-------------------------")
+    # print("")
 
