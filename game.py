@@ -28,32 +28,25 @@ def determine_winner(choice_1, choice_2):
     # code to determine the winner
     winner = "" # variable winner will be returned by the determine_winner function
 
-    #if (choice_1 == choice_2): #Tie
+    lower_choice_1 = choice_1.lower() # normalizes the validated user input so that it is only lowercase
 
-    if (((choice_1 == "Paper" or choice_1 == "PAPER" or choice_1 == "paper") and 
-          (choice_2 == "Paper" or choice_2 == "PAPER" or choice_2 == "paper")) 
-        or 
-         ((choice_1 == "Rock" or choice_1 == "ROCK" or choice_1 == "rock") and
-         (choice_2 == "Rock" or choice_2 == "ROCK" or choice_2 == "rock"))
-         or
-         ((choice_1 == "Scissors" or choice_1 == "SCISSORS" or choice_1 == "scissors") and
-         (choice_2 == "Scissors" or choice_2 == "SCISSORS" or choice_2 == "scissors")) ): # all tie combination with different valid inputs
+    if (lower_choice_1 == choice_2): #Tie
         winner = None
-    elif (choice_1 == "rock" or choice_1 == "ROCK" or choice_1 == "Rock"):
-        if (choice_2 == "paper" or choice_2 == "PAPER" or choice_2 == "Paper"): # Rock vs. Paper
+    elif (lower_choice_1 == "rock"):
+        if (choice_2 == "paper"): # Rock vs. Paper
             winner = choice_2 # "paper"
         else: # Rock vs. Scissors
-            winner = choice_1 # "rock" 
-    elif (choice_1 == "paper" or choice_1 == "PAPER" or choice_1 == "Paper"):
-        if (choice_2 == "rock" or choice_2 == "ROCK" or choice_2 == "Rock"): # Paper vs. Rock 
-            winner = choice_1 # "paper"
+            winner = lower_choice_1 # "rock" 
+    elif (lower_choice_1 == "paper"):
+        if (choice_2 == "rock"): # Paper vs. Rock 
+            winner = lower_choice_1 # "paper"
         else: # Paper vs. Scissors
             winner = choice_2 # "scissors"
     else: # (choice_1 == "Scissors" or choice_1 == "SCISSORS" or choice_1 == "Scissors")
-        if (choice_2 == "rock" or choice_2 == "ROCK" or choice_2 == "Rock"): # Scissors vs. Rock
+        if (choice_2 == "rock"): # Scissors vs. Rock
             winner = choice_2 # "rock"
         else: # Scissors vs. Paper
-            winner = choice_1 # "scissors"
+            winner = lower_choice_1 # "scissors"
     return winner
 
 # MAIN 
