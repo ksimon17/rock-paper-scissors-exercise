@@ -30,6 +30,7 @@ def determine_winner(choice_1, choice_2):
 
     lower_choice_1 = choice_1.lower() # normalizes the validated user input so that it is only lowercase
 
+    # conditional logic to determine winner
     if (lower_choice_1 == choice_2): #Tie
         winner = None
     elif (lower_choice_1 == "rock"):
@@ -42,7 +43,7 @@ def determine_winner(choice_1, choice_2):
             winner = lower_choice_1 # "paper"
         else: # Paper vs. Scissors
             winner = choice_2 # "scissors"
-    else: # (choice_1 == "Scissors" or choice_1 == "SCISSORS" or choice_1 == "Scissors")
+    else: # Scissors
         if (choice_2 == "rock"): # Scissors vs. Rock
             winner = choice_2 # "rock"
         else: # Scissors vs. Paper
@@ -67,6 +68,7 @@ if __name__ == "__main__":
     # User Input 
     user_selection = input("To play the game, Please choose one of 'rock', 'paper', or 'scissors': ")
 
+    # Create a list of all valid inputs
     valid_inputs = ["rock", "paper", "scissors", "ROCK", "PAPER", "SCISSORS", "Rock", "Paper", "Scissors"]
 
     if (user_selection not in valid_inputs):
@@ -89,7 +91,6 @@ if __name__ == "__main__":
     computer_selection = random.choice(list_of_choices) 
     
     # Determining the Winner
-    # CALL THE DETERMINE_WINNER FUNCTION WITHIN MAIN ?
     winner = determine_winner(user_selection, computer_selection)
     print ("-------------------------")
     print ("You chose: " + user_selection)
