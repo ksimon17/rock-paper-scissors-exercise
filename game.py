@@ -69,12 +69,6 @@ if __name__ == "__main__":
 
     valid_inputs = ["rock", "paper", "scissors", "ROCK", "PAPER", "SCISSORS", "Rock", "Paper", "Scissors"]
 
-    
-    # Validating User Input - Check if the User Inputted Valued Input
-    # if (user_selection != "rock" and user_selection != "paper" and user_selection != "scissors" and
-    #     user_selection != "ROCK" and user_selection != "PAPER" and user_selection != "SCISSORS" and 
-    #     user_selection != "Rock" and user_selection != "Paper" and user_selection != "Scissors" ):
-
     if (user_selection not in valid_inputs):
         #Invalid Input -- Inform the User and Gracefully Exit the Program
         print("")
